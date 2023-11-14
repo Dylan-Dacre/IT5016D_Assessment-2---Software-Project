@@ -66,7 +66,7 @@ def submit_new_ticket():
     while not staff_id.isdigit() or len(staff_id) != 4:
         print(
             f"{TextColours.FAIL}Invalid Staff ID. Please enter a four-digit number.{TextColours.ENDC}")
-        staff_id = input("Enter your four digit taff ID: ")
+        staff_id = input("Enter your four digit staff ID: ")
 
     ticket_creator_name = input("Enter your name: ")
     contact_email = input("Enter contact email: ")
