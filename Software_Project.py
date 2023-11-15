@@ -65,17 +65,33 @@ def submit_new_ticket():
     # Check if the staff ID is a four-digit number
     while not staff_id.isdigit() or len(staff_id) != 4:
         print(
-            f"{TextColours.FAIL}Invalid Staff ID. Please enter a four-digit number.{TextColours.ENDC}")
+            f"{TextColours.FAIL}Invalid Staff ID. Please enter your four-digit staff ID.{TextColours.ENDC}")
         staff_id = input("Enter your four digit staff ID: ")
 
     ticket_creator_name = input("Enter your name: ")
+    # Check if the name is blank
+    while not ticket_creator_name:
+        print(
+            f"{TextColours.FAIL}Name cannot be blank. Please enter a valid name.{TextColours.ENDC}")
+        ticket_creator_name = input("Enter your name: ")
+
     contact_email = input("Enter contact email: ")
+    # Check if the contact email is blank
+    while not contact_email:
+        print(
+            f"{TextColours.FAIL}Email cannot be blank. Please enter a valid email.{TextColours.ENDC}")
+        contact_email = input("Enter contact email: ")
 
     print("If you require a new password type: Password change")
     description = input("Enter description of the problem: ")
+    # Check if the description is blank
+    while not description:
+        print(
+            f"{TextColours.FAIL}Description cannot be blank. Please enter a valid description.{TextColours.ENDC}")
+        description = input("Enter description of the problem: ")
 
     # Check if the description contains the words "Password change"
-    if "Password change" in description:
+    if any(keyword in description.lower() for keyword in ["password change", "passwordchange"]):
         new_password = staff_id[:2] + ticket_creator_name[:3]
         print(
             f"\nNew Password: {TextColours.OKGREEN}{new_password}{TextColours.ENDC}")
