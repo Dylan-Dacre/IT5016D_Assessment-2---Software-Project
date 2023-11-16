@@ -13,7 +13,7 @@ The Helpdesk Ticket System is a command-line Python application designed to stre
 1. New Ticket Submission:
 
    - Users can easily submit new helpdesk tickets by providing essential information, including Staff ID, Ticket Creator Name, Contact Email, and a description of the issue.
-   - The system automatically assigns a unique ticket number to each new ticket, and if the issue description includes the words "Password Change," a new password is generated.
+   - The system automatically assigns a unique ticket number to each new ticket, and if the issue description includes the words "Password Change" a new password is generated.
 
 2. Ticket Display:
 
